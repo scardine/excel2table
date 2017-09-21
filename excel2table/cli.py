@@ -51,7 +51,7 @@ def prompt_overwrite(file_name):
 @click.option("-e", "--export", default=True, is_flag=True,
               help="Enable filtered rows export options.")
 @click.option("-eo", "--export-options",
-              type=click.Choice(["copy", "csv", "json", "print"]),
+              type=click.Choice(["copy", "csv", "json", "print", "chart"]),
               multiple=True,
               help=("Enable specific export options. By default shows all. " +
                     "For multiple options use -eo flag multiple times." +
