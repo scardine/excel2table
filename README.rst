@@ -4,8 +4,8 @@ Excel2Table
 .. image:: https://api.travis-ci.org/pyexcel/excel2table.svg?branch=master
    :target: http://travis-ci.org/pyexcel/excel2table
 
-.. image:: https://codecov.io/github/pyexcel/excel2table/coverage.png
-   :target: https://codecov.io/github/pyexcel/excel2table
+.. image:: https://codecov.io/gh/pyexcel/excel2table/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/pyexcel/excel2table
 
 
 Simple command-line utility to convert csv, xls, xlsx, ods files to searchable and
@@ -16,9 +16,9 @@ It is a variant of `csvtotable <https://github.com/vividvilla/csvtotable>`_.
 Demo
 ----
 
-`Here is a demo`_ of `sample ods`_ file converted to HTML table.
+`Here is a demo`_ of `sample ods`_ file converted to HTML table with charts.
 
-.. image:: https://raw.githubusercontent.com/vividvilla/csvtotable/master/sample/table.gif
+.. image:: https://user-images.githubusercontent.com/4280312/30404140-006c035e-98dd-11e7-9cfd-1fcf3e405e2f.gif
 
 Installation
 ------------
