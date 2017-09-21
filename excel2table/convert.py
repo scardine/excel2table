@@ -10,6 +10,7 @@ import tempfile
 import webbrowser
 from io import open
 import pyexcel as p
+from datetime import date, datetime
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 logging.basicConfig()
@@ -30,6 +31,17 @@ js_src_pattern = re.compile(r'<script.*?src=\"(.*?)\".*?<\/script>',
                             re.IGNORECASE | re.MULTILINE)
 # Path to JS files inside templates
 js_files_path = os.path.join(package_path, templates_dir)
+
+
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, date):
+            date_string = obj.strftime('%Y-%m-%d')
+            return date_string
+        if isinstance(obj, datetime):
+            datetime_string = obj.strftime("%Y-%m-%d %H:%M:%S")
+            return datetime_string
+        return json.JSONEncoder.default(self, obj)
 
 
 def convert(input_file_name, delimiter=',', quotechar='|',
@@ -177,6 +189,7 @@ def render_template(table_headers, table_items, **options):
         datatable_options["buttons"] = allowed
 
     datatable_options_json = json.dumps(datatable_options,
+                                        cls=DateTimeEncoder,
                                         separators=(",", ":"))
 
     return template.render(title=caption or "Table",
