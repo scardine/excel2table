@@ -24,7 +24,6 @@ env = Environment(
     loader=FileSystemLoader(templates_dir),
     autoescape=select_autoescape(["html", "xml", "j2"])
 )
-template = env.get_template("template.j2")
 
 # Regex to match src property in script tags
 js_src_pattern = re.compile(r'<script.*?src=\"(.*?)\".*?<\/script>',
@@ -103,7 +102,7 @@ def serve(content):
         os.remove(temp_file_path)
 
 
-def render_template(table_headers, table_items, **options):
+def render_template(table_headers, table_items, notebook=False, **options):
     """
     Render Jinja2 template
     """
@@ -191,6 +190,11 @@ def render_template(table_headers, table_items, **options):
     datatable_options_json = json.dumps(datatable_options,
                                         cls=DateTimeEncoder,
                                         separators=(",", ":"))
+
+    if notebook:
+        template = env.get_template("notebook.j2")
+    else:
+        template = env.get_template("template.j2")
 
     return template.render(title=caption or "Table",
                            caption=caption,
