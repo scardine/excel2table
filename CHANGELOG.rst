@@ -1,7 +1,14 @@
 Change log
 =============
 
+2.2.2 - 15.03.2019
+------------------------
 
+Added
+*******
+
+#. added this file into sour tar ball.
+#. fix problems with pyexcel-sortable & python3
 
 2.2.1 - 21.02.2017
 ------------------------
