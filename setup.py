@@ -2,7 +2,16 @@
 
 from setuptools import setup
 
-_version = "2.2.1"
+try:
+    from jupyterpip import cmdclass
+except:
+    import pip
+    import importlib
+
+    pip.main(['install', 'jupyter-pip'])
+    cmdclass = importlib.import_module('jupyterpip').cmdclass
+
+_version = "2.3.0"
 
 
 def read_files(*files):
@@ -76,12 +85,14 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Software Development :: Libraries"
     ],
-    install_requires=["click >= 6.7", "jinja2 >= 2.9.6",
+    install_requires=["click >= 6.7", "jinja2 >= 2.8.0",
                       "pyexcel >= 0.5.0", "six >= 1.10.0",
                       "pyexcel-xls >= 0.4.0", "pyexcel-odsr >= 0.4.0"],
     entry_points={
         "console_scripts": [
             "excel2table = excel2table.cli:cli",
             ]
-    }
+    },
+    cmdclass=cmdclass('excel2table/templates/excel2table',
+                      enable='excel2table/main')
 )
