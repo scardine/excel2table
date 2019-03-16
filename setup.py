@@ -14,7 +14,7 @@ except Exception:
         'pyecharts_jupyter_installer').cmdclass
 
 
-_version = "2.3.1"
+_version = "2.3.2"
 
 
 def read_files(*files):
