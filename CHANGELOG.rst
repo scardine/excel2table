@@ -1,14 +1,14 @@
 Change log
 =============
 
-2.2.2 - 15.03.2019
+2.3.0 - 15.03.2019
 ------------------------
 
 Added
 *******
 
 #. added this file into sour tar ball.
-#. fix problems with pyexcel-sortable & python3
+#. fix problems with pyexcel-sortable & python3 `PR17 <https://github.com/vividvilla/csvtotable/pull/17>1_
 
 2.2.1 - 21.02.2017
 ------------------------
