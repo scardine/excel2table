@@ -6,9 +6,13 @@ try:
     from jupyterpip import cmdclass
 except Exception:
     import subprocess
+    import importlib
 
     subprocess.check_call([sys.executable, '-m',
                            'pip', 'install', 'jupyter-pip'])
+    cmdclass = importlib.import_module(
+        'pyecharts_jupyter_installer').cmdclass
+
 
 _version = "2.3.0"
 
