@@ -4,7 +4,7 @@ from setuptools import setup
 
 try:
     from jupyterpip import cmdclass
-except:
+except Exception:
     import pip
     import importlib
 

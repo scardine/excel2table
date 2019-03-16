@@ -136,13 +136,13 @@ def render_template(table_headers, table_items, notebook=False, **options):
     scroll_y = height
 
     if virtual_scroll_limit:
-        if virtual_scroll_limit != -1 and len(table_items) > virtual_scroll_limit:
+        if virtual_scroll_limit != -1 and len(table_items) > virtual_scroll_limit:  # noqa: E501
             virtual_scroll = True
             display_length = -1
 
-        fmt = ("\nVirtual scroll is enabled since number of rows exceeds {limit}."
-               " You can set custom row limit by setting flag -vs, --virtual-scroll."
-               " Virtual scroll can be disabled by setting the value to -1 and set it to 0 to always enable.")  # flake8: noqa
+        fmt = ("\nVirtual scroll is enabled since number of rows exceeds {limit}."  # noqa: E501
+               " You can set custom row limit by setting flag -vs, --virtual-scroll."  # noqa: E501
+               " Virtual scroll can be disabled by setting the value to -1 and set it to 0 to always enable.")  # noqa: E501
         logger.warn(fmt.format(limit=virtual_scroll_limit))
 
         if not is_paging:
