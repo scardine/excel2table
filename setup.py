@@ -14,7 +14,7 @@ except Exception:
         'pyecharts_jupyter_installer').cmdclass
 
 
-_version = "2.3.0"
+_version = "2.3.1"
 
 
 def read_files(*files):
@@ -60,6 +60,7 @@ def filter_out_test_code(file_handle):
 
 setup(
     name="excel2table",
+    test_suite="tests",
     version=_version,
     description="Simple commandline utility to convert excel files"
     "to searchable and sortable HTML table.",
