@@ -8,7 +8,7 @@ except Exception:
     import subprocess
 
     subprocess.check_call([sys.executable, '-m',
-                           'pip', 'install', 'jupyterpip'])
+                           'pip', 'install', 'jupyter-pip'])
 
 _version = "2.3.0"
 

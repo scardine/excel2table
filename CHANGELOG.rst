@@ -8,7 +8,7 @@ Added
 *******
 
 #. added this file into sour tar ball.
-#. fix problems with pyexcel-sortable & python3 `PR17 <https://github.com/vividvilla/csvtotable/pull/17>1_
+#. fix problems with pyexcel-sortable & python3 `PR17 <https://github.com/vividvilla/csvtotable/pull/17>`_
 
 2.2.1 - 21.02.2017
 ------------------------
