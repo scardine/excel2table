@@ -1,15 +1,14 @@
 #!/usr/bin/env python
-
+import sys
 from setuptools import setup
 
 try:
     from jupyterpip import cmdclass
 except Exception:
-    import pip
-    import importlib
+    import subprocess
 
-    pip.main(['install', 'jupyter-pip'])
-    cmdclass = importlib.import_module('jupyterpip').cmdclass
+    subprocess.check_call([sys.executable, '-m',
+                           'pip', 'install', 'jupyterpip'])
 
 _version = "2.3.0"
 
