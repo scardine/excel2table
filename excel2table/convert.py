@@ -63,7 +63,7 @@ def convert(input_file_name, delimiter=',', quotechar='|',
         csv_headers = excel_sheet.colnames
 
     # Set default column name if header is not present
-    if not csv_headers and len(excel_sheet.number_of_rows()) > 1:
+    if not csv_headers and excel_sheet.number_of_rows() > 1:
         csv_headers = ["Column {}".format((n+1))
                        for n in range(len(excel_sheet.number_of_columns()))]
     # Render csv to HTML
